@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PassportAuthController;
 use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +14,9 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::post('register', [PassportAuthController::class, 'register'])->name('register');
-Route::post('login', [PassportAuthController::class, 'login'])->name('login');
+    Route::get('students/list', [StudentController::class,'index']);
+    Route::post('students/store', [StudentController::class,'store']);
+    Route::put('students/update/{id}', [StudentController::class,'update']);
+    Route::get('students/show/{id}', [StudentController::class,'show']);
+    Route::get('students/destroy/{id}', [StudentController::class,'destroy']);
 
-Route::middleware('auth:api')->group(function () {
-    Route::get('get-user', [PassportAuthController::class, 'userInfo']);
-    Route::resource('students', 'StudentController::class');
- 
-});
