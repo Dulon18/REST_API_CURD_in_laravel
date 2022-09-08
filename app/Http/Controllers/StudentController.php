@@ -56,19 +56,16 @@ class StudentController extends Controller
         if (is_null($student)) {
         return $this->sendError('student not found.');
         }
-        return response()->json([
-        "success" => true,
-        "message" => "Student data retrieved successfully.",
-        "data" => $student
-        ]);
+        else{
+            return response()->json([
+                "success" => true,
+                "message" => "Student data retrieved successfully.",
+                "data" => $student
+                ]);
+        }
+      
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Student $student)
     {
         $input = $request->all();
@@ -99,12 +96,13 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Student $student)
+    public function destroy($id)
     {
+        $student=Student::find($id);
         $student->delete();
         return response()->json([
         "success" => true,
-        "message" => "Product deleted successfully.",
+        "message" => "Student deleted successfully.",
         "data" => $student
 ]);
     }
