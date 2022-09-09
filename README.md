@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Output
+
+![apiStore](https://user-images.githubusercontent.com/80118217/189367841-65ecbab6-f307-4170-a693-a0d740b17404.JPG)
 
 
 ## License
