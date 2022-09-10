@@ -16,7 +16,7 @@ use App\Http\Controllers\StudentController;
 
 Route::get('students/list', [StudentController::class,'index']);
 Route::post('students/store', [StudentController::class,'store']);
-Route::put('students/update/{id}', [StudentController::class,'update']);
+Route::put('students/update/{id}', [StudentController::class,'updateData']);
 Route::get('students/show/{id}', [StudentController::class,'show']);
 Route::delete('students/destroy/{id}', [StudentController::class,'destroy']);
 
